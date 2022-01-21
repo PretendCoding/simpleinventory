@@ -1,5 +1,5 @@
-// Can't user mongo here since it's not being run on the server
-// const MongoClient = require("mongodb");
+import { find } from "./ajaxRequests/find.js";
+import { createTable } from "./createInventoryTable.js";
 
 /*
     I need the following functions for mongodb; this should be imported under the namespace Mongo so I can just do Mongo.findOne
@@ -10,3 +10,10 @@
         insert(filter) // Creates a new item in the inventory with data of object filter
         delete(filter) // Deletes an item of object filter
 */
+
+main();
+
+async function main() {
+    const results = await find({});
+    createTable(results);
+}

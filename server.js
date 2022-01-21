@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
 }
 const express = require("express");
+const findRouter = require('./routes/ajaxResponses/find');
 
 // Constants
 const PORT = process.env.PORT || 3000;
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // Routes
 app.use('/', indexRouter);
+app.use('/find', findRouter);
 
 app.listen(PORT);
 
