@@ -10,18 +10,24 @@
 </head>
 <body>
     <div id="addItemModal" class="submission-form modal">
+        <span class="close-button">&times</span>
   
         <label for="itemIdAdd">Item ID</label>        
         <input type="text" id="itemIdAdd">
+        <span class="hidden error-message" id="itemIdErrorAlreadyExists">An item with this ID already exists</span>
+        <span class="hidden error-message" id="itemIdErrorEmpty">Item ID cannot be blank</span>
         
         <label for="nameAdd">Name</label>        
         <input type="text" id="nameAdd">
+        <span class="hidden error-message" id="nameErrorEmpty">Name cannot be blank</span>
         
         <label for="unitMeasurementAdd">Unit Measurement</label>        
         <input type="email" id="unitMeasurementAdd">
+        <span class="hidden error-message" id="unitErrorEmpty">Unit Measurement cannot be blank</span>
         
         <label for="quantityAdd">Quantity</label>        
-        <input type="number" id="quantityAdd">
+        <input type="number" id="quantityAdd" min="0">
+        <span class="hidden error-message" id="quantityErrorEmpty">Quantity cannot be blank</span>
         
         <button type="button" id="addItemAjaxButtom">Add Item</button>
     </div>

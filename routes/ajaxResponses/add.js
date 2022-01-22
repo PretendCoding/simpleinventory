@@ -18,13 +18,13 @@ router.post("/", async (req, res) => {
         itemId: req.body.itemId,
         name: req.body.name,
         unitMeasurement: req.body.unitMeasurement,
-        quantity: req.body.quantity
+        quantity: parseInt(req.body.quantity)
     }
 
     try {
         await client.connect();
         const insertedItem = await client.db("simple_inventory").collection("inventory").insertOne(data);
-        
+
         const cursor = await client.db("simple_inventory").collection("inventory").findOne(insertedItem.insertedId);
 
         res.send(cursor);

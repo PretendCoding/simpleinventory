@@ -3,8 +3,6 @@ body {
     color: #ccc;
 }
 
-
-
 .submission-form{
     max-width:500px;
     margin:2rem auto;
@@ -12,6 +10,19 @@ body {
     padding:2rem;
     border-radius:5px;
     background-color: #2980B9;
+}
+.close-button {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 .submission-form > label {
     display:block;
@@ -45,4 +56,17 @@ body {
 
 .modal {
     display: none;
+}
+
+.input-error {
+    background-color: #aaaaaa;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: #aa3333;
+    font-weight: bold;
 }

@@ -16,7 +16,8 @@ router.post("/", async (req, res) => {
 
     try {
         await client.connect();
-        const cursor = client.db("simple_inventory").collection("inventory").find({});
+
+        const cursor = client.db("simple_inventory").collection("inventory").find(req.body);
 
         const results = await cursor.toArray();
 
