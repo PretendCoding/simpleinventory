@@ -1,5 +1,8 @@
 import { find } from "./ajaxRequests/find.js";
-import { createTable } from "./createInventoryTable.js";
+import { add } from "./ajaxRequests/add.js";
+import { createTable, addItemToTable } from "./createInventoryTable.js";
+
+const $ = (elemId) => document.getElementById(elemId);
 
 /*
     I need the following functions for mongodb; this should be imported under the namespace Mongo so I can just do Mongo.findOne
@@ -16,4 +19,20 @@ main();
 async function main() {
     const results = await find({});
     createTable(results);
+}
+
+$('addItemButton').addEventListener('click', () => {
+    $('addItemModal').style.display = 'block';
+    $('addItemAjaxButtom').addEventListener('click', addItem);
+});
+
+async function addItem() {
+    let filter = {
+        itemId: $('itemIdAdd').value,
+        name: $('nameAdd').value,
+        unitMeasurement: $('unitMeasurementAdd').value,
+        quantity: $('quantityAdd').value
+    }
+    const result = await add(filter);
+    addItemToTable(result);
 }
