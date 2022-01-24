@@ -70,3 +70,11 @@ body {
     color: #aa3333;
     font-weight: bold;
 }
+
+.update-item-clickable-row {
+    cursor: pointer;
+}
+
+#deleteItemConfirmButtom {
+    background-color: #aa3333;
+}

@@ -23,7 +23,7 @@
         <span class="hidden error-message" id="nameErrorEmpty">Name cannot be blank</span>
         
         <label for="unitMeasurementAdd">Unit Measurement</label>        
-        <input type="email" id="unitMeasurementAdd">
+        <input type="text" id="unitMeasurementAdd">
         <span class="hidden error-message" id="unitErrorEmpty">Unit Measurement cannot be blank</span>
         
         <label for="quantityAdd">Quantity</label>        
@@ -31,6 +31,29 @@
         <span class="hidden error-message" id="quantityErrorEmpty">Quantity cannot be blank</span>
         
         <button type="button" id="addItemAjaxButtom">Add Item</button>
+    </div>
+
+    <div id="updateItemModal" class="submission-form modal">
+        <span id="updateItemCloseButton" class="close-button">&times</span>
+  
+        <label for="itemIdUpdate">Item ID</label>        
+        <input type="text" id="itemIdUpdate">
+        <span class="hidden error-message" id="itemIdErrorEmpty">Item ID cannot be blank</span>
+        
+        <label for="nameUpdate">Name</label>        
+        <input type="text" id="nameUpdate">
+        <span class="hidden error-message" id="nameErrorEmpty">Name cannot be blank</span>
+        
+        <label for="unitMeasurementUpdate">Unit Measurement</label>        
+        <input type="text" id="unitMeasurementUpdate">
+        <span class="hidden error-message" id="unitErrorEmpty">Unit Measurement cannot be blank</span>
+        
+        <label for="quantityUpdate">Quantity</label>        
+        <input type="number" id="quantityUpdate" min="0">
+        <span class="hidden error-message" id="quantityErrorEmpty">Quantity cannot be blank</span>
+        
+        <button type="button" id="updateItemAjaxButtom">Update Item</button>
+        <button type="button" id="deleteItemConfirmButtom">Delete Item</button>
     </div>
 
     <button id="addItemButton">Add Item</button>

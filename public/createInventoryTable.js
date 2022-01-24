@@ -1,3 +1,5 @@
+import { showUpdateModal } from "./updateItem.js";
+
 // This function should take in a JSON object which contains the list of inventory objects. This function should only be concerned with creating the HTML table
 
 export function createTable(data) {
@@ -18,6 +20,8 @@ export function addItemToTable(element) {
 
     if (element.itemId !== 'ABC123') {
         const tr = tbody.appendChild(document.createElement('tr'));
+        tr.classList.add('update-item-clickable-row');
+        showUpdateModal(tr);
 
         const idElem = tr.appendChild(document.createElement('td'));
         idElem.textContent = element.itemId;
