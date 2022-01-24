@@ -2,8 +2,9 @@ const $ = (elemId) => document.getElementById(elemId);
 
 export function showUpdateModal(elem) {
     elem.addEventListener('click', (event) => {
-        $('updateItemModal').style.display = 'block';
-        
+        $('updateItemModal').style.display = 'block';     
+        $('modalBackground').style.display = 'block';
+
         let _id = elem.children[0].id;
         let itemId = elem.children[0].textContent;
         let name = elem.children[1].textContent;
@@ -17,3 +18,8 @@ export function showUpdateModal(elem) {
         
     });
 }
+
+$('updateItemCloseButton').addEventListener('click', () => {
+    $('updateItemModal').style.display = 'none';        
+    $('modalBackground').style.display = 'none';
+});

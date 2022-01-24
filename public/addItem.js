@@ -15,10 +15,12 @@ function main() {
 
     $('addItemCloseButton').addEventListener('click', () => {
         $('addItemModal').style.display = 'none';        
+        $('modalBackground').style.display = 'none';        
     });
 
     $('addItemButton').addEventListener('click', () => {
-        $('addItemModal').style.display = 'block';
+        $('addItemModal').style.display = 'block';     
+        $('modalBackground').style.display = 'block';
         $('addItemAjaxButtom').addEventListener('click', addItem);
     });
 

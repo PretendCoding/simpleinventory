@@ -56,6 +56,21 @@ body {
 
 .modal {
     display: none;
+    z-index: 2;
+}
+
+.modalBackground {
+    display: none;
+    background-color: rgba(0.0, 0.0, 0.0, 0.4);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    z-index: 1;
+    overflow: auto;
+    left: 0%;
+    top: 0%;
 }
 
 .input-error {

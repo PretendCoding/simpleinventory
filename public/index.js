@@ -1,7 +1,7 @@
 import { find } from "./ajaxRequests/find.js";
 import { createTable } from "./createInventoryTable.js";
 
-// const $ = (elemId) => document.getElementById(elemId);
+const $ = (elemId) => document.getElementById(elemId);
 
 /*
     I need the following functions for mongodb; this should be imported under the namespace Mongo so I can just do Mongo.findOne
@@ -19,3 +19,7 @@ async function main() {
     const results = await find({});
     createTable(results);
 }
+
+$('modalBackground').addEventListener('click', (event) => {
+    if (event.target == $('modalBackground')) $('modalBackground').style.display = 'none';
+});
