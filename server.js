@@ -6,6 +6,8 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require("express");
 const findRouter = require('./routes/ajaxResponses/find');
 const addRouter = require('./routes/ajaxResponses/add');
+const updateRouter = require('./routes/ajaxResponses/update');
+const deleteRouter = require('./routes/ajaxResponses/delete');
 
 // Constants
 const PORT = process.env.PORT || 3000;
@@ -25,6 +27,8 @@ app.use(express.json());
 app.use('/', indexRouter);
 app.use('/find', findRouter);
 app.use('/add', addRouter);
+app.use('/update', updateRouter);
+app.use('/delete', deleteRouter);
 
 app.listen(PORT);
 

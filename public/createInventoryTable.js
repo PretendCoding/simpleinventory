@@ -4,6 +4,12 @@ import { showUpdateModal } from "./updateItem.js";
 
 export function createTable(data) {
 
+    const oldTable = document.querySelector('table');
+
+    if (oldTable !== null) {
+        oldTable.innerHTML = '';
+    }
+
     const table = document.body.appendChild(document.createElement('table'));
     const thead = table.appendChild(document.createElement('thead'));
     const tbody = table.appendChild(document.createElement('tbody'));

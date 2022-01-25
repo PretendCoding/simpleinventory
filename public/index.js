@@ -1,5 +1,6 @@
 import { find } from "./ajaxRequests/find.js";
 import { createTable } from "./createInventoryTable.js";
+import { closeModal } from "./utilities.js";
 
 const $ = (elemId) => document.getElementById(elemId);
 
@@ -21,5 +22,7 @@ async function main() {
 }
 
 $('modalBackground').addEventListener('click', (event) => {
-    if (event.target == $('modalBackground')) $('modalBackground').style.display = 'none';
+    if (event.target == $('modalBackground')) {
+        closeModal();
+    }
 });

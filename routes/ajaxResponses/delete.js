@@ -23,16 +23,12 @@ router.post("/", async (req, res) => {
     try {
         await client.connect();
 
-        const cursor = client.db("simple_inventory").collection("inventory").find(req.body);
+        const result = client.db("simple_inventory").collection("inventory").deleteOne({_id: req.body._id});
 
-        const results = await cursor.toArray();
-
-        res.send(results);
+        res.send(result);
 
     } catch (error) {
         console.log(error)
-    } finally {
-        await client.close();
     }
     
 });

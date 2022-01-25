@@ -1,6 +1,7 @@
 import { find } from "./ajaxRequests/find.js";
 import { add } from "./ajaxRequests/add.js";
 import { addItemToTable } from "./createInventoryTable.js";
+import { $, closeModal, handleItemInputErrors } from "./utilities.js"
 
 const stateChange = setInterval(() => {
     if (document.readyState == 'complete'){
@@ -11,76 +12,63 @@ const stateChange = setInterval(() => {
 
 function main() {
 
-    const $ = (elemId) => document.getElementById(elemId);
+    /// Click Events
 
-    $('addItemCloseButton').addEventListener('click', () => {
-        $('addItemModal').style.display = 'none';        
-        $('modalBackground').style.display = 'none';        
-    });
+    $('addItemCloseButton').addEventListener('click', closeModal);
 
     $('addItemButton').addEventListener('click', () => {
         $('addItemModal').style.display = 'block';     
         $('modalBackground').style.display = 'block';
-        $('addItemAjaxButtom').addEventListener('click', addItem);
+        $('addItemAjaxButton').addEventListener('click', addItem);
     });
+
+    /// Focusout Events
 
     $('itemIdAdd').addEventListener('focusout', async (e) => {
         let target = e.currentTarget;
 
         target.classList.remove('input-error');
-        $('addItemAjaxButtom').disabled = false;
+        $('addItemAjaxButton').disabled = false;
         $('itemIdErrorAlreadyExists').classList.add('hidden');
         $('itemIdErrorEmpty').classList.add('hidden');
 
-        if (handleAddItemInputErrors(target.value === '', target, 'itemIdErrorEmpty')) return;
+        if (handleItemInputErrors(target.value === '', target, $('addItemAjaxButton'), $('itemIdErrorEmpty'))) return;
 
         const results = await find({itemId: e.currentTarget.value});
-        if (handleAddItemInputErrors(results.length !== 0, target, 'itemIdErrorAlreadyExists')) return;
+        if (handleItemInputErrors(results.length !== 0, target, $('addItemAjaxButton'), $('itemIdErrorAlreadyExists'))) return;
     });
 
     $('nameAdd').addEventListener('focusout', (e) => {
         let target = e.currentTarget;
 
         target.classList.remove('input-error');
-        $('addItemAjaxButtom').disabled = false;
+        $('addItemAjaxButton').disabled = false;
         $('nameErrorEmpty').classList.add('hidden');
 
-        if (handleAddItemInputErrors(target.value === '', target, 'nameErrorEmpty')) return;
+        if (handleItemInputErrors(target.value === '', target, $('addItemAjaxButton'), $('nameErrorEmpty'))) return;
     });
 
     $('unitMeasurementAdd').addEventListener('focusout', (e) => {
         let target = e.currentTarget;
 
         target.classList.remove('input-error');
-        $('addItemAjaxButtom').disabled = false;
+        $('addItemAjaxButton').disabled = false;
         $('unitErrorEmpty').classList.add('hidden');
 
-        if (handleAddItemInputErrors(target.value === '', target, 'unitErrorEmpty')) return;
+        if (handleItemInputErrors(target.value === '', target, $('addItemAjaxButton'), $('unitErrorEmpty'))) return;
     });
 
     $('quantityAdd').addEventListener('focusout', (e) => {
         let target = e.currentTarget;
 
         target.classList.remove('input-error');
-        $('addItemAjaxButtom').disabled = false;
+        $('addItemAjaxButton').disabled = false;
         $('quantityErrorEmpty').classList.add('hidden');
 
-        if (handleAddItemInputErrors(target.value === '', target, 'quantityErrorEmpty')) return;
+        if (handleItemInputErrors(target.value === '', target, $('addItemAjaxButton'), $('quantityErrorEmpty'))) return;
     });
 
-    function handleAddItemInputErrors(error, element, errorMessageElementId) {
-        if (error) {
-            element.classList.add('input-error');
-            $('addItemAjaxButtom').disabled = true;
-            $(errorMessageElementId).classList.remove('hidden');
-            return true;
-        } else {
-            element.classList.remove('input-error');
-            $('addItemAjaxButtom').disabled = false;
-            $(errorMessageElementId).classList.add('hidden');
-            return false;
-        }
-    }
+    /// Helper Functions
 
     async function addItem() {
         let filter = {

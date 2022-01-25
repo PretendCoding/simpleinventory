@@ -23,11 +23,11 @@ router.post("/", async (req, res) => {
     try {
         await client.connect();
 
-        const cursor = client.db("simple_inventory").collection("inventory").find(req.body);
+        // const cursor = client.db("simple_inventory").collection("inventory").find(req.body);
 
-        const results = await cursor.toArray();
+        const result = await client.db("simple_inventory").collection("inventory").updateOne({_id:req.body._id}, {$set:req.body});
 
-        res.send(results);
+        res.send(result);
 
     } catch (error) {
         console.log(error)
