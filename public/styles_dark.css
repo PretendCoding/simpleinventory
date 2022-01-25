@@ -113,8 +113,10 @@ body {
 .inventory-table th {
     padding: 20px 15px;
     text-align: left;
-    font-weight: 500;
-    font-size: 12px;
+    font-weight: 800;
+    font-size: 16px;
+    background-color: #009b34;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.1);
 }
 
 .inventory-table td {
@@ -123,4 +125,11 @@ body {
     font-weight: 300;
     font-size: 12px;
     border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
 }
