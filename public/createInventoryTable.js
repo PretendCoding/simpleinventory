@@ -11,6 +11,8 @@ export function createTable(data) {
     }
 
     const table = document.body.appendChild(document.createElement('table'));
+    table.classList.add('inventory-table');
+
     const thead = table.appendChild(document.createElement('thead'));
     const tbody = table.appendChild(document.createElement('tbody'));
 

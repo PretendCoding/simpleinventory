@@ -26,4 +26,5 @@ export async function deleteItem() {
     $('deleteItemConfirmButton').removeEventListener('click', deleteItem);
     $('deleteItemConfirmButton').addEventListener('click', confirmDelete);
     closeModal();
+    // Need to refresh the table still
 }

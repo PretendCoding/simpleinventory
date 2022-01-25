@@ -83,6 +83,7 @@ function main() {
         $('quantityAdd').value = '';
         const result = await add(filter);
         addItemToTable(result);
+        closeModal();
     }
 
 }
