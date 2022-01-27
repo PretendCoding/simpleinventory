@@ -41,6 +41,41 @@ body {
     font-size:18px;
     border-radius:5px;
 }
+
+.quantity {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.quantity > *:nth-child(1) {
+    flex: 1 1 90%;
+}
+
+.quantity > *:nth-child(2) {
+    flex: 1 1 5%;
+}
+
+.quantity > *:nth-child(3) {
+    flex: 1 1 5%;
+}
+
+#quantityUpdate {
+    border:2px solid #005e20;
+    padding:.5rem;
+    font-size:18px;
+    border-radius:5px;
+}
+/*
+.quantityChangeButtons {
+    float:right;
+    display: flex;
+}
+
+.quantityChangeButtons > button {
+    height: 50px;
+    width: 50px;
+}
+*/
   
 #sendBtn{
     border:0;
@@ -132,4 +167,8 @@ body {
   overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
+}
+
+table {
+    table-layout: fixed;
 }

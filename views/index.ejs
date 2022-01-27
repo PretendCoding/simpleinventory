@@ -52,7 +52,11 @@
         <span class="hidden error-message" id="unitErrorEmptyUpdate">Unit Measurement cannot be blank</span>
         
         <label for="quantityUpdate">Quantity</label>        
-        <input type="number" id="quantityUpdate" min="0">
+        <div class="quantity">
+            <input type="number" id="quantityUpdate" min="0">
+                <button type="button">+</button>
+                <button type="button">-</button>
+        </div>
         <span class="hidden error-message" id="quantityErrorEmptyUpdate">Quantity cannot be blank</span>
         
         <button type="button" id="updateItemAjaxButton">Update Item</button>
