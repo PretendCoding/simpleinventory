@@ -53,10 +53,12 @@ body {
 
 .quantity > *:nth-child(2) {
     flex: 1 1 5%;
+    min-width: 50px;
 }
 
 .quantity > *:nth-child(3) {
     flex: 1 1 5%;
+    min-width: 50px;
 }
 
 #quantityUpdate {
