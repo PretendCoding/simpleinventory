@@ -48,11 +48,12 @@ body {
 }
 
 .quantity > *:nth-child(1) {
-    flex: 1 1 80%;
+    flex: 1 1 50%;
 }
 
 .quantity > button {
     width: 50px;
+    min-width: 50px;
 }
 /*
 .quantity > *:nth-child(2) {
