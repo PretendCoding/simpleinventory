@@ -48,9 +48,13 @@ body {
 }
 
 .quantity > *:nth-child(1) {
-    flex: 1 1 90%;
+    flex: 1 1 80%;
 }
 
+.quantity > button {
+    width: 50px;
+}
+/*
 .quantity > *:nth-child(2) {
     flex: 1 1 5%;
     min-width: 50px;
@@ -60,6 +64,7 @@ body {
     flex: 1 1 5%;
     min-width: 50px;
 }
+*/
 
 #quantityUpdate {
     border:2px solid #005e20;
