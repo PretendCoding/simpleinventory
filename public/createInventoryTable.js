@@ -3,17 +3,6 @@ import { showUpdateModal } from "./updateItem.js";
 // This function should take in a JSON object which contains the list of inventory objects. This function should only be concerned with creating the HTML table
 
 export function createTable(data) {
-    
-    // let thead = document.querySelector('thead');
-
-    // if (thead === null) {
-    //     let theadTable = document.body.appendChild(document.createElement('table'));
-    //     theadTable.classList.add('inventory-table');
-    //     thead = theadTable.appendChild(document.createElement('thead'));
-    //     const trHead = thead.appendChild(document.createElement('tr'));
-    //     trHead.innerHTML = '<th>Item ID</th><th>Item Name</th><th>Unit</th><th>Quantity</th>';
-    //     console.log();
-    // }
 
     const oldTable = document.getElementById('mainInventoryTable');
 

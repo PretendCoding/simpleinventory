@@ -3,8 +3,60 @@ body {
     color: #ccc;
 }
 
+.close-button {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}  
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.submission-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #005e20;
+    border:4px solid #002418;
+    max-width:80%;    
+    margin: 2rem auto;
+    padding: 1rem;
+}
+.submission-form > * {
+    display: flex;
+    width: 100%;
+}
+.submission-form > label {
+    text-transform:uppercase;
+    font-size:14px;
+}
+.submission-form > input {
+    height: 40px;
+    font-size:18px;
+    border-radius:5px;
+}
+
+.quantity {
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 1 80%;
+}
+.quantity > button {
+    width: 40px;
+    float: right;
+}
+.quantity > input {
+    height: 40px;
+    font-size:18px;
+    border-radius:5px;
+}
+
+/*
 .submission-form{
-    max-width:80%;/*500px;*/
+    max-width:80%;
     margin:2rem auto;
     border:4px solid #002418;
     padding-top: 10px;
@@ -13,25 +65,6 @@ body {
     padding-right: 50px;
     border-radius:5px;
     background-color: #005e20;
-}
-.close-button {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-  
-.close-button:hover,
-.close-button:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-.submission-form > label {
-    display:block;
-    padding:1rem 0 .25rem;
-    text-transform:uppercase;
-    font-size:14px;
 }
 .submission-form > input, textarea {
     display:block;
@@ -55,33 +88,12 @@ body {
     width: 50px;
     min-width: 50px;
 }
-/*
-.quantity > *:nth-child(2) {
-    flex: 1 1 5%;
-    min-width: 50px;
-}
-
-.quantity > *:nth-child(3) {
-    flex: 1 1 5%;
-    min-width: 50px;
-}
-*/
 
 #quantityUpdate {
     border:2px solid #005e20;
     padding:.5rem;
     font-size:18px;
     border-radius:5px;
-}
-/*
-.quantityChangeButtons {
-    float:right;
-    display: flex;
-}
-
-.quantityChangeButtons > button {
-    height: 50px;
-    width: 50px;
 }
 */
   

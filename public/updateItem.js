@@ -40,6 +40,16 @@ function main() {
         closeModal();
     });
 
+    $('updateQuantityOnlyAdd').addEventListener('click', () => {
+        let num = prompt('How many items do you want to add?');
+        num = parseInt(num);
+    });
+
+    $('updateQuantityOnlySub').addEventListener('click', () => {
+        let num = prompt('How many items do you want to remove?');
+        num = parseInt(num);
+    });
+
     /// Focusout Events
 
     $('itemIdUpdate').addEventListener('focusout', async (e) => {
