@@ -42,13 +42,17 @@ body {
 .quantity {
     display: flex;
     flex-wrap: nowrap;
-    flex: 1 1 80%;
+    flex: 1 1 100%;
 }
 .quantity > button {
     width: 40px;
+    min-width: 40px;
     float: right;
 }
 .quantity > input {
+    display: flex;
+    flex: 1 1 20%;
+    max-width: 70%;
     height: 40px;
     font-size:18px;
     border-radius:5px;
