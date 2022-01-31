@@ -42,12 +42,21 @@ function main() {
 
     $('updateQuantityOnlyAdd').addEventListener('click', () => {
         let num = prompt('How many items do you want to add?');
+        if (num === '') return;
         num = parseInt(num);
+        if (num === NaN) return;
+        num = $('quantityUpdate').value + num;
+        if (num < 0) {
+            alert('You cannot remove more items than you have in the inventory');
+            return;
+        }
     });
 
     $('updateQuantityOnlySub').addEventListener('click', () => {
         let num = prompt('How many items do you want to remove?');
+        if (num === '') return;
         num = parseInt(num);
+        if (num === NaN) return;
     });
 
     /// Focusout Events
