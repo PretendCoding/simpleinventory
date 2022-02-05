@@ -45,11 +45,13 @@ function main() {
         if (num === '') return;
         num = parseInt(num);
         if (num === NaN) return;
-        num = $('quantityUpdate').value + num;
+        num = parseInt($('quantityUpdate').value) + num;
         if (num < 0) {
             alert('You cannot remove more items than you have in the inventory');
             return;
         }
+        $('quantityUpdate').value = num;
+        updateItem();
     });
 
     $('updateQuantityOnlySub').addEventListener('click', () => {
@@ -57,6 +59,13 @@ function main() {
         if (num === '') return;
         num = parseInt(num);
         if (num === NaN) return;
+        num = parseInt($('quantityUpdate').value) - num;
+        if (num < 0) {
+            alert('You cannot remove more items than you have in the inventory');
+            return;
+        }
+        $('quantityUpdate').value = num;
+        updateItem();
     });
 
     /// Focusout Events
