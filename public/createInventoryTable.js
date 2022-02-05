@@ -4,6 +4,8 @@ import { showUpdateModal } from "./updateItem.js";
 
 export function createTable(data) {
 
+    window.sessionStorage.tableData = JSON.stringify(data);
+
     const oldTable = document.getElementById('mainInventoryTable');
 
     let table;
