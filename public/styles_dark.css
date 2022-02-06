@@ -197,3 +197,35 @@ body {
 table {
     table-layout: fixed;
 }
+
+strong {
+    font-weight: bold;
+}
+
+.inventory {
+    display: flex;
+    flex-wrap: wrap;
+}
+.inventory > * {
+    flex: 1 1 33%
+}
+.inventory-item {
+    display: flex;
+    background-color: #005e20;
+    margin: 10px;
+    padding: 10px;
+}
+.inventory-item > div {
+    display: flex;
+    flex-direction: column;
+    border: 1px red solid;
+}
+.inventory-item > div > div {
+    flex-direction: column;
+    border: 1px green solid;
+}
+.inventory-item > img {
+    max-width: 250px;
+    max-height: 250px;
+    padding-right: 10px;
+}

@@ -4,6 +4,29 @@ import { showUpdateModal } from "./updateItem.js";
 
 export function createTable(data) {
 
+    const container = document.querySelector('[data-inventory-container]');
+    const itemTemplate = document.querySelector('[data-item-template]');
+
+    data.forEach(element => {
+        const item = itemTemplate.content.cloneNode(true).children[0];
+        const itemId = item.querySelector('[data-itemId]');
+        const nameElem = item.querySelector('[data-name]');
+        const unitMeasurement = item.querySelector('[data-unitMeasurement]');
+        const quantity = item.querySelector('[data-quantity]');
+        const img = item.querySelector('[data-img]');
+
+        itemId.innerHTML = `<strong>Item ID:</strong> ${element.itemId}`;
+        itemId._id = element._id;
+        nameElem.innerHTML = `<strong>Name:</strong> ${element.name}`;
+        unitMeasurement.innerHTML = `<strong>Unit Measurement:</strong> ${element.unitMeasurement}`;
+        quantity.innerHTML = `<strong>Quantity:</strong> ${element.quantity}`;
+        img.src = element.image || './images/no-image-found.jpg';
+
+        container.append(item);
+    });
+    
+    return; // everything after this point is explicitly populating the old table, so we don't need it right now
+
     window.sessionStorage.tableData = JSON.stringify(data);
 
     const oldTable = document.getElementById('mainInventoryTable');

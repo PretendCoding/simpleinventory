@@ -70,7 +70,7 @@
         <input type="search" id="tableSearch" />
     </div>
     <button id="addItemButton">Add Item</button>
-    <table class="inventory-table">
+    <!--<table class="inventory-table">
         <thead>
             <tr>
                 <th>Item Id</th>
@@ -80,6 +80,18 @@
             </tr>
         </thead>
     </table>
-    <div class="tbl-content"></div>
+    <div class="tbl-content"></div>-->
+    <div class="inventory" data-inventory-container></div>
+    <template data-item-template>
+        <div class="inventory-item">
+            <img data-img>
+            <div>
+                <div data-itemId>Item ID: </div>
+                <div data-name>Name: </div>
+                <div data-unitMeasurement>Unit Measurement: </div>
+                <div data-quantity>Quantity: </div>
+            </div>
+        </div>
+    </template>
 </body>
 </html>
