@@ -9,6 +9,8 @@ export function createTable(data) {
 
     data.forEach(element => {
         const item = itemTemplate.content.cloneNode(true).children[0];
+        showUpdateModal(item);
+
         const itemId = item.querySelector('[data-itemId]');
         const nameElem = item.querySelector('[data-name]');
         const unitMeasurement = item.querySelector('[data-unitMeasurement]');
@@ -16,10 +18,18 @@ export function createTable(data) {
         const img = item.querySelector('[data-img]');
 
         itemId.innerHTML = `<strong>Item ID:</strong> ${element.itemId}`;
+        itemId.itemId = element.itemId;
         itemId._id = element._id;
+
         nameElem.innerHTML = `<strong>Name:</strong> ${element.name}`;
+        nameElem.name = element.name;
+
         unitMeasurement.innerHTML = `<strong>Unit Measurement:</strong> ${element.unitMeasurement}`;
+        unitMeasurement.unitMeasurement = element.unitMeasurement;
+
         quantity.innerHTML = `<strong>Quantity:</strong> ${element.quantity}`;
+        quantity.quantity = element.quantity;
+
         img.src = element.image || './images/no-image-found.jpg';
 
         container.append(item);

@@ -8,11 +8,11 @@ export function showUpdateModal(elem) {
         $('updateItemModal').style.display = 'block';     
         $('modalBackground').style.display = 'block';
 
-        let _id = elem.children[0].id;
-        let itemId = elem.children[0].textContent;
-        let name = elem.children[1].textContent;
-        let unitMeasurement = elem.children[2].textContent;
-        let quantity = parseInt(elem.children[3].textContent);
+        let _id = elem.children[1].children[0].id;
+        let itemId = elem.children[1].children[0].itemId;
+        let name = elem.children[1].children[1].name;
+        let unitMeasurement = elem.children[1].children[2].unitMeasurement;
+        let quantity = parseInt(elem.children[1].children[3].quantity);
 
         $('itemIdUpdate').value = itemId;
         $('itemIdUpdate')._id = _id;
