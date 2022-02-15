@@ -77,6 +77,15 @@ function main() {
             unitMeasurement: $('unitMeasurementAdd').value,
             quantity: $('quantityAdd').value
         }
+        
+        for (var key in filter) {
+            if (filter[key] == '') {
+                console.error(`Filter cannot contain empty values`);
+                return;
+                // This needs user forward error handling
+            }            
+        }
+
         $('itemIdAdd').value = '';
         $('nameAdd').value = '';
         $('unitMeasurementAdd').value = '';

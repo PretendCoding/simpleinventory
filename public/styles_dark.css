@@ -9,9 +9,12 @@ body {
 
 .close-button {
     color: #aaaaaa;
-    float: right;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
+    text-align: right;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: -2rem;
 }  
 .close-button:hover,
 .close-button:focus {
@@ -21,45 +24,57 @@ body {
 }
 
 .submission-form {
-    display: flex;
-    flex-direction: column;
-    background-color: #005e20;
-    border:4px solid #002418;
-    max-width:80%;    
+    display: grid;
+    gap: 1rem;
+    background-color: #282b39;
+    border:1px solid #3a3f50;
     margin: 2rem auto;
     padding: 1rem;
+    align-items: right;
 }
-.submission-form > * {
-    display: flex;
+.submission-form > div {
+    display: grid;
     width: 100%;
 }
-.submission-form > label {
+.submission-form > div > label {
     text-transform:uppercase;
-    font-size:14px;
+    font-size:1rem;
 }
-.submission-form > input {
+.submission-form > div > input {
+    height: 40px;
+    font-size:18px;
+    border-radius:5px;
+}
+.submission-form > button,
+.submission-form > div > button {
+    background-color: #3a3f50;
+    border: 1px solid white;
+    color: #aaa;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+.submission-form > button:hover,
+.submission-form > div > button:hover {
+    cursor: pointer;
+    color: #000;
+    border-color: #11131b;
+    box-shadow: 0px 3px 8px 0px rgba(17,19,27,.3);    
+}
+
+.quantity {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.quantity > input {
     height: 40px;
     font-size:18px;
     border-radius:5px;
 }
 
-.quantity {
-    display: flex;
-    flex-wrap: nowrap;
-    flex: 1 1 100%;
-}
-.quantity > button {
-    width: 40px;
-    min-width: 40px;
-    float: right;
-}
-.quantity > input {
-    display: flex;
-    flex: 1 1 20%;
-    max-width: 70%;
-    height: 40px;
-    font-size:18px;
-    border-radius:5px;
+.update-item-button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
   
 #sendBtn{
@@ -248,10 +263,20 @@ strong {
     .sidebar {
         display: none;
     }
+    .searchbar {
+        width: 100%;
+        left: -20rem;
+    }
 }
 
 @media (min-width: 700px) {
     .inventory {
         grid-template-columns: 1fr 1fr;
+    }
+    .submission-form {
+        max-width: 30%;
+    }
+    .quantity {
+        grid-template-columns: 8fr 1fr 1fr;
     }
 }
