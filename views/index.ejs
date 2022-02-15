@@ -12,10 +12,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="search-icon-container">
-        <img src="./images/search-icon.png" />
-        <img src="./images/add-item-icon.png" />
+    <!-- <section class="sidebar">
+        <div class="sidebar-container">
+            <img src="./images/search-icon.png" />
+            <img id="addItemButton" src="./images/add-item-icon.png" /> needs to exist
+        </div>
+    </section> -->
+
+    <div>
+        <input placeholder="&#x1F50E;" class="searchbar" type="search" id="tableSearch" />
+        <div id="addItemButton">&#10133;</div>
     </div>
+
     <div class="modalBackground" id="modalBackground">
         <div id="addItemModal" class="submission-form modal">
             <span id="addItemCloseButton" class="close-button">&times</span>
@@ -69,11 +77,7 @@
             <span class="hidden error-message" id="confirmDeleteMessage">Click delete again to confirm</span>
         </div>
     </div>
-
-    <div>
-        <input type="search" id="tableSearch" />
-    </div>
-    <button id="addItemButton">Add Item</button>
+    <!-- <button id="addItemButton">Add Item</button> -->
     <!--<table class="inventory-table">
         <thead>
             <tr>

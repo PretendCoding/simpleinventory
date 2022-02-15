@@ -5,6 +5,8 @@ import { showUpdateModal } from "./updateItem.js";
 export function createTable(data) {
 
     const container = document.querySelector('[data-inventory-container]');
+    container.innerHTML = '';
+
     const itemTemplate = document.querySelector('[data-item-template]');
 
     data.forEach(element => {
