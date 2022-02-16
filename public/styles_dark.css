@@ -284,11 +284,11 @@ strong {
     }
     .searchbar {
         width: 100%;
-        left: -19rem;
+        left: -230px;
     }
     #addItemButton {
         width: 100%;
-        left: -19rem;
+        left: -230px;
         font-size: 1.5rem;
     }
 }
