@@ -210,17 +210,38 @@ strong {
     border-radius: 5px;
 }
 
-#addItemButton {
-    display: block;
+
+.action-bars {
+    display: grid;
     position: fixed;
-    top: 3rem;
-    left: -2.65rem;
-    font-size: 1.75rem;
-    font-weight: bold;
+    left: 0px;
+    top: 8px;
+    margin: 0px;
+    padding: 0px;
+}
+.action-bars > img {
+    z-index: 1;
+    position: absolute;
+    top: 4px;
+    left: 12px;
+    height: 25px;
+    pointer-events: none;
+}
+.action-bars > div > img {
+    position: relative;
+    top: 4px;
+    left: -12px;
+    height: 25px;
+}
+
+#addItemButton {
+    position: relative;
+    top: 8px;
+    left: -450px;
     background-color: #fff;
-    height: 2rem;
-    border-radius: 1.2rem;
-    width: 5rem;
+    height: 32px;
+    border-radius: 16px;
+    width: 500px;
     text-align: right;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -230,16 +251,14 @@ strong {
     box-shadow: 0px 3px 8px 0px rgba(17,19,27,.3);
 }
 
-
 .searchbar {
-    display: block;
-    position: fixed;
-    left: -29rem;
-    top: 0.5rem;
+    position: relative;
     text-align: right;
+    top: 0px;
     width: 500px;
+    left: -450px;
     font-size: 1.2rem;
-    height: 2rem;
+    height: 32px;
     padding-right: 0.5rem;
     border-radius: 1rem;
     transition: all 0.5s ease;
