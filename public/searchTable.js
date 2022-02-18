@@ -44,8 +44,9 @@ function main() {
         items.forEach(item => {
 
             const elemName = item.elem.querySelector('[data-name]').textContent;
+            const elemId = item.elem.querySelector('[data-itemId]').textContent;
 
-            if (elemName.toLowerCase().includes(value.toLowerCase())) {
+            if (elemName.toLowerCase().includes(value.toLowerCase()) || elemId.toLowerCase().includes(value.toLowerCase())) {
                 item.elem.classList.remove('hidden');
             }
         })
