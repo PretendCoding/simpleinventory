@@ -10,20 +10,43 @@ const stateChange = setInterval(() => {
 }, 100);
 
 function main() {
+
+    $('tableSearch').value = '';
+
+    let itemsTemp = document.querySelector('[data-inventory-container]').childNodes;
+    
     ////// Click Events
-
+    
     $('tableSearch').addEventListener('input', () => {
-        const table = JSON.parse(window.sessionStorage.tableData);
-        let data;
+        const rawData = JSON.parse(window.sessionStorage.tableData);
 
-        document.querySelector('tbody').innerHTML = '';
+        let items = [];
+        itemsTemp.forEach(item => {
+            items.push({
+                elem: item,
+                _id: item._id
+            });
+        });
 
-        table.forEach(item => {
+        let value = $('tableSearch').value;
 
-            let value = $('tableSearch').value;
+        if (value == '' || value == null || value == undefined) {
+            items.forEach(item => {
+                item.elem.classList.remove('hidden');
+            });
+        } else {
+            items.forEach(item => {
+                item.elem.classList.add('hidden');
+                console.log('hello')
+            });
+        }
 
-            if (item.name.toLowerCase().includes(value.toLowerCase())) {
-                addItemToTable(item);
+        items.forEach(item => {
+
+            const elemName = item.elem.querySelector('[data-name]').textContent;
+
+            if (elemName.toLowerCase().includes(value.toLowerCase())) {
+                item.elem.classList.remove('hidden');
             }
         })
 

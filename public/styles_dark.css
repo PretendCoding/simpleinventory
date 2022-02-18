@@ -115,10 +115,6 @@ body {
     background-color: #aaaaaa;
 }
 
-.hidden {
-    display: none;
-}
-
 .error-message {
     color: #aa3333;
     font-weight: bold;
@@ -267,6 +263,11 @@ strong {
 .searchbar:focus {
     left: 0rem;
     border-radius: 0px;
+}
+
+
+.hidden {
+    display: none;
 }
 
 
