@@ -1,4 +1,4 @@
-export async function add(filter, options) {
+export async function add(filter, formData) {
 
     let results;
 
@@ -12,6 +12,15 @@ export async function add(filter, options) {
         })
         .then(response => response.text())
         .then(data => results = data);
+
+        await fetch('/saveImage', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.path);
+        });
     } catch (error) {
         console.error(error);
     } finally {

@@ -4,10 +4,12 @@ if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
 }
 const express = require("express");
+const fileupload = require('express-fileupload');
 const findRouter = require('./routes/ajaxResponses/find');
 const addRouter = require('./routes/ajaxResponses/add');
 const updateRouter = require('./routes/ajaxResponses/update');
 const deleteRouter = require('./routes/ajaxResponses/delete');
+const saveImageRouter = require('./routes/ajaxResponses/saveImage');
 
 // Constants
 const PORT = process.env.PORT || 3000;
@@ -22,6 +24,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false, limit: '10mb'}));
 app.use(express.json());
+app.use(fileupload());
 
 // Routes
 app.use('/', indexRouter);
@@ -29,6 +32,7 @@ app.use('/find', findRouter);
 app.use('/add', addRouter);
 app.use('/update', updateRouter);
 app.use('/delete', deleteRouter);
+app.use('/saveImage', saveImageRouter);
 
 app.listen(PORT);
 

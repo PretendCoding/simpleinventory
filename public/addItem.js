@@ -75,7 +75,8 @@ function main() {
             itemId: $('itemIdAdd').value,
             name: $('nameAdd').value,
             unitMeasurement: $('unitMeasurementAdd').value,
-            quantity: $('quantityAdd').value
+            quantity: $('quantityAdd').value,
+            image: $('itemImage').files[0].name
         }
         
         for (var key in filter) {
@@ -85,13 +86,21 @@ function main() {
                 // This needs user forward error handling
             }            
         }
+        
+        const formData = new FormData();
+        formData.append('image', $('itemImage').files[0]);
+        
+        const result = await add(filter, formData);
 
-        $('itemIdAdd').value = '';
-        $('nameAdd').value = '';
-        $('unitMeasurementAdd').value = '';
-        $('quantityAdd').value = '';
-        const result = await add(filter);
-        addItemToTable(result);
+        // Make another fetch call to something like /saveImage or whatever which actually saves the image to the server
+        // After that I need to make sure it's pointing to the correct path when it tries to find the image
+        // Also, the addItemToTable needs to be reworked since it's still trying to use table element
+
+        // addItemToTable(result);
+        // $('itemIdAdd').value = '';
+        // $('nameAdd').value = '';
+        // $('unitMeasurementAdd').value = '';
+        // $('quantityAdd').value = '';
         closeModal();
     }
 

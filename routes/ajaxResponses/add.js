@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const express = require('express');
 const { MongoClient } = require('mongodb');
+const fileupload = require('express-fileupload');
 
 const router = express.Router();
 
@@ -18,7 +19,8 @@ router.post("/", async (req, res) => {
         itemId: req.body.itemId,
         name: req.body.name,
         unitMeasurement: req.body.unitMeasurement,
-        quantity: parseInt(req.body.quantity)
+        quantity: parseInt(req.body.quantity),
+        image: req.body.image
     }
 
     try {

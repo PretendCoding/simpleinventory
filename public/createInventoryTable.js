@@ -35,7 +35,11 @@ export function createTable(data) {
         quantity.innerHTML = `<strong>Quantity:</strong> ${element.quantity}`;
         quantity.quantity = element.quantity;
         
-        img.src = element.image || './images/no-image-found.jpg';
+        img.src = './images/itemImages/' + element.image;
+        img.onerror = () => {
+            img.src = "./images/no-image-found.jpg";
+        }
+
         
         container.append(item);
     });
