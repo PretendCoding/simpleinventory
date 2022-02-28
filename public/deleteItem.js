@@ -20,9 +20,22 @@ export function confirmDelete() {
     $('deleteItemConfirmButton').addEventListener('click', deleteItem);
 }
 
-export async function deleteItem() {
-    const result = await deleteOneItem({_id:$('itemIdUpdate')._id});
-    console.log(result);
+export async function deleteItem(event) {
+    await deleteOneItem({_id:$('itemIdUpdate')._id});
+
+    const _id = $('itemIdUpdate')._id;
+
+    const container = document.querySelector('[data-inventory-container]');
+
+    const nodes = container.childNodes;
+
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i]._id == _id) {
+            nodes[i].remove();
+            break;
+        }
+    }
+
     $('deleteItemConfirmButton').removeEventListener('click', deleteItem);
     $('deleteItemConfirmButton').addEventListener('click', confirmDelete);
     closeModal();
