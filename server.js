@@ -17,6 +17,7 @@ const app = express();
 
 // Routers
 const indexRouter = require('./routes/index');
+const loginRouter = require('./routes/login');
 
 // Server setup
 app.set('view engine', 'ejs');
@@ -28,6 +29,7 @@ app.use(fileupload());
 
 // Routes
 app.use('/', indexRouter);
+app.use('/login', loginRouter);
 app.use('/find', findRouter);
 app.use('/add', addRouter);
 app.use('/update', updateRouter);
