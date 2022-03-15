@@ -270,6 +270,23 @@ strong {
     display: none;
 }
 
+.login-register {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.login-register > form > div {
+    display: grid;
+    align-items: stretch;
+}
+.login-register > a {
+    background-color: rgb(155, 155, 155);
+    border: 4px rgb(155, 155, 155);
+    border-style:outset;
+    border-radius: 4px;
+    padding: 2px;
+}
+
 
 @media (max-width: 900px) { /*Change to rem later*/
     .inventory {
